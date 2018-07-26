@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 // Rutas
 import { APP_ROUTING } from './app.routes';
 
+// services
+import { HeroesService } from './servicios/heroes.service';
 
 // componetes
 import { AppComponent } from './app.component';
@@ -11,6 +13,7 @@ import { NabvarComponent } from './components/shared/nabvar/nabvar.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroeComponent } from './components/heroe/heroe.component';
 
 
 @NgModule({
@@ -19,14 +22,16 @@ import { HeroesComponent } from './components/heroes/heroes.component';
     NabvarComponent,
     HomeComponent,
     AboutComponent,
-    HeroesComponent
-   
+    HeroesComponent,
+    HeroeComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTING
   ],
-  providers: [],
+  providers: [
+    HeroesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
